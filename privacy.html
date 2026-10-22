@@ -1,66 +1,501 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Atreus Studios</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#f7f9ff">
+    <meta name="description" content="Privacy Policy for Atreus Studios applications.">
+    <title>Privacy Policy | Atreus Studios</title>
+
+    <style>
+        :root {
+            --ink: #142044;
+            --muted: #65718b;
+            --blue: #246bfd;
+            --line: #e7ebf4;
+            --shadow: 0 12px 35px rgba(32, 58, 112, .08);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            color: var(--ink);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                         "Segoe UI", sans-serif;
+            background:
+                radial-gradient(ellipse at 85% 5%, #dff4ff 0, transparent 34rem),
+                radial-gradient(ellipse at 0 18%, #fff0f3 0, transparent 28rem),
+                #f8faff;
+            line-height: 1.7;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        a {
+            color: var(--blue);
+        }
+
+        a:focus-visible {
+            outline: 3px solid #8cb7ff;
+            outline-offset: 3px;
+        }
+
+        .wrap {
+            width: min(900px, calc(100% - 40px));
+            margin-inline: auto;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: rgba(255, 255, 255, .94);
+            border-bottom: 1px solid var(--line);
+            padding-top: env(safe-area-inset-top);
+            backdrop-filter: blur(12px);
+        }
+
+        .nav {
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .brand {
+            color: var(--ink);
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: -.6px;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .nav-links a {
+            color: #35415d;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue);
+        }
+
+        .nav-links .contact {
+            background: var(--blue);
+            color: #fff;
+            padding: 10px 17px;
+            border-radius: 99px;
+            font-weight: 700;
+        }
+
+        .hero {
+            padding: 58px 0 30px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            color: var(--blue);
+            font-size: 11px;
+            letter-spacing: 2.5px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        h1, h2, p {
+            margin-top: 0;
+        }
+
+        h1 {
+            font-size: clamp(36px, 6vw, 54px);
+            line-height: 1.12;
+            letter-spacing: -2px;
+            margin: 12px 0;
+        }
+
+        .hero p {
+            max-width: 620px;
+            margin: 0 auto;
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+        .policy-card {
+            background: rgba(255, 255, 255, .92);
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            padding: clamp(22px, 5vw, 42px);
+            margin: 12px auto 58px;
+        }
+
+        .policy-section + .policy-section {
+            border-top: 1px solid var(--line);
+            margin-top: 26px;
+            padding-top: 25px;
+        }
+
+        .policy-section h2 {
+            font-size: 19px;
+            letter-spacing: -.35px;
+            margin-bottom: 10px;
+        }
+
+        .policy-section p {
+            color: #4f5d79;
+            margin-bottom: 12px;
+        }
+
+        .policy-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        ul {
+            color: #4f5d79;
+            padding-left: 22px;
+            margin: 8px 0 14px;
+        }
+
+        li {
+            padding-left: 4px;
+            margin: 5px 0;
+        }
+
+        .external-link {
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+
+        .contact-panel {
+            border-radius: 18px;
+            background: #f0f5ff;
+            padding: 18px 20px;
+            margin-top: 14px;
+        }
+
+        .contact-panel strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .contact-panel a {
+            overflow-wrap: anywhere;
+        }
+
+        .last-updated {
+            display: inline-block;
+            border: 1px solid var(--line);
+            background: #f8faff;
+            color: var(--muted);
+            border-radius: 999px;
+            padding: 7px 12px;
+            font-size: 12px;
+            font-weight: 650;
+            margin-top: 26px;
+        }
+
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 23px 0 calc(24px + env(safe-area-inset-bottom));
+            background: rgba(255, 255, 255, .58);
+        }
+
+        .footer-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: #485571;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .footer-links a:hover {
+            color: var(--blue);
+        }
+
+        .privacy-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-weight: 750 !important;
+            padding: 9px 12px;
+            border-radius: 12px;
+            background: #edf3ff;
+            color: #174fc4 !important;
+        }
+
+        .privacy-link span {
+            font-size: 22px;
+            line-height: 1;
+        }
+
+        .copyright {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            color: #8290aa;
+            font-size: 11px;
+            margin-top: 18px;
+        }
+
+        @media (max-width: 560px) {
+            .wrap {
+                width: calc(100% - 28px);
+            }
+
+            .nav {
+                min-height: 62px;
+            }
+
+            .brand {
+                font-size: 17px;
+            }
+
+            .nav-links {
+                gap: 0;
+            }
+
+            .nav-links a:not(.contact) {
+                display: none;
+            }
+
+            .nav-links .contact {
+                padding: 9px 13px;
+                font-size: 13px;
+            }
+
+            .hero {
+                padding: 42px 0 22px;
+            }
+
+            h1 {
+                font-size: 39px;
+                letter-spacing: -1.5px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .policy-card {
+                border-radius: 18px;
+                padding: 21px 18px;
+                margin-bottom: 38px;
+            }
+
+            .policy-section + .policy-section {
+                margin-top: 22px;
+                padding-top: 21px;
+            }
+
+            .policy-section h2 {
+                font-size: 17px;
+            }
+
+            .policy-section p,
+            ul {
+                font-size: 14px;
+            }
+
+            .footer-row {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .copyright {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-    <h1>Privacy Policy</h1>
+<header>
+    <div class="wrap nav">
+        <a class="brand" href="./index.html">Atreus Studios</a>
 
-    <p>Atreus Studios respects your privacy and is committed to protecting it.</p>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="./index.html#apps">Apps</a>
+            <a class="contact" href="mailto:pothakanuriabilash@gmail.com">
+                Contact
+            </a>
+        </nav>
+    </div>
+</header>
 
-    <h2>Information We Collect</h2>
+<main>
 
-    <p>
-        Atreus Studios does not collect, store, transmit, or share any personal
-        information from users through our applications.
-    </p>
+    <section class="hero">
+        <div class="wrap">
+            <div class="eyebrow">
+                Atreus Studios · Your privacy matters
+            </div>
 
-    <h2>Advertising</h2>
+            <h1>Privacy Policy</h1>
 
-    <p>
-        Our apps use Google AdMob to display advertisements.
-        Google AdMob may collect and process certain information, including
-        your device's Advertising ID and other non-personal device information,
-        to provide personalized and non-personalized ads, measure ad performance,
-        and prevent fraud.
-    </p>
+            <p>
+                Atreus Studios respects your privacy and is committed
+                to protecting it.
+            </p>
+        </div>
+    </section>
 
-    <p>
-        This information is collected and processed by Google, not by
-        Atreus Studios. We do not have access to or store this information.
-    </p>
+    <div class="wrap">
+        <article class="policy-card">
 
-    <h2>Third-Party Services</h2>
+            <section class="policy-section">
+                <h2>Information We Collect</h2>
 
-    <p>
-        Our apps use the following third-party service:
-    </p>
+                <p>
+                    Atreus Studios does not collect, store, transmit, or share
+                    any personal information from users through our applications.
+                </p>
+            </section>
 
-    <ul>
-        <li>Google AdMob (Advertising)</li>
-    </ul>
+            <section class="policy-section">
+                <h2>Advertising</h2>
 
-    <p>
-        You can learn more about how Google collects and processes data by
-        visiting Google's Privacy Policy:
-        <br>
-        <a href="https://policies.google.com/privacy" target="_blank">
-            https://policies.google.com/privacy
-        </a>
-    </p>
+                <p>
+                    Our apps use Google AdMob to display advertisements.
+                    Google AdMob may collect and process certain information,
+                    including your device's Advertising ID and other
+                    non-personal device information, to provide personalized
+                    and non-personalized ads, measure ad performance,
+                    and prevent fraud.
+                </p>
 
-    <h2>Contact Us</h2>
+                <p>
+                    This information is collected and processed by Google,
+                    not by Atreus Studios. We do not have access to or store
+                    this information.
+                </p>
+            </section>
 
-    <p>
-        If you have any questions regarding this Privacy Policy, you can contact us at:
-        <br>
-        <strong>pothakanuriabilash@gmail.com</strong>
-    </p>
+            <section class="policy-section">
+                <h2>Third-Party Services</h2>
 
-    <p><strong>Last Updated:</strong> August 2026</p>
+                <p>
+                    Our apps use the following third-party service:
+                </p>
+
+                <ul>
+                    <li>Google AdMob (Advertising)</li>
+                </ul>
+
+                <p>
+                    You can learn more about how Google collects and processes
+                    data by visiting Google's Privacy Policy:
+                </p>
+
+                <p>
+                    <a class="external-link"
+                       href="https://policies.google.com/privacy"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        https://policies.google.com/privacy
+                    </a>
+                </p>
+            </section>
+
+            <section class="policy-section">
+                <h2>Contact Us</h2>
+
+                <p>
+                    If you have any questions regarding this Privacy Policy,
+                    you can contact us at:
+                </p>
+
+                <div class="contact-panel">
+                    <strong>Atreus Studios</strong>
+                    <a href="mailto:pothakanuriabilash@gmail.com">
+                        pothakanuriabilash@gmail.com
+                    </a>
+                </div>
+            </section>
+
+            <div class="last-updated">
+                <strong>Last Updated:</strong> August 2026
+            </div>
+
+        </article>
+    </div>
+
+</main>
+
+<footer>
+    <div class="wrap">
+
+        <div class="footer-row">
+            <a class="brand" href="./index.html">Atreus Studios</a>
+
+            <nav class="footer-links" aria-label="Footer navigation">
+                <a href="./index.html#apps">Apps</a>
+
+                <a class="privacy-link" href="./privacy.html">
+                    <span aria-hidden="true">▤</span>
+                    Privacy Policy
+                </a>
+
+                <a href="mailto:pothakanuriabilash@gmail.com">
+                    Contact
+                </a>
+            </nav>
+        </div>
+
+        <div class="copyright">
+            <span>
+                © <span id="year">2026</span> Atreus Studios.
+                All rights reserved.
+            </span>
+
+            <span>Made with care for a better everyday.</span>
+        </div>
+
+    </div>
+</footer>
+
+<script>
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+</script>
 
 </body>
 </html>
