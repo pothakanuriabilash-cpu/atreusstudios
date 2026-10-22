@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f9ff">
+  <meta name="description" content="Atreus Studios creates devotional apps and useful everyday tools.">
+  <title>Atreus Studios | Devotion, Inspiration & Everyday Utility</title>
+  <style>
+    :root{--ink:#142044;--muted:#65718b;--blue:#246bfd;--line:#e7ebf4;--paper:#fff;--soft:#f4f7ff;--shadow:0 12px 35px rgba(32,58,112,.08)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:84px}
+    body{margin:0;color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(ellipse at 85% 5%,#dff4ff 0,transparent 34rem),radial-gradient(ellipse at 0 18%,#fff0f3 0,transparent 28rem),#f8faff;line-height:1.6;-webkit-text-size-adjust:100%}
+    a{color:inherit}
+    .wrap{width:min(1100px,calc(100% - 40px));margin-inline:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top);backdrop-filter:blur(12px)}
+    .nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-size:20px;font-weight:800;letter-spacing:-.6px;white-space:nowrap}
+    .brand-icon{width:36px;height:36px;color:#535bff;display:inline-flex}
+    .brand-icon svg{width:100%;height:100%}
+    .navlinks{display:flex;align-items:center;gap:22px}
+    .navlinks a{font-size:14px;text-decoration:none;color:#35415d}
+    .navlinks a:hover{color:var(--blue)}
+    .navlinks .contact{background:var(--blue);color:#fff;padding:10px 17px;border-radius:99px;font-weight:700}
+    .hero{padding:64px 0 54px}
+    .hero-grid{display:grid;grid-template-columns:1fr .9fr;align-items:center;gap:36px}
+    .eyebrow{color:var(--blue);font-size:11px;letter-spacing:2.5px;font-weight:800;text-transform:uppercase}
+    h1,h2,h3,p{margin-top:0}
+    h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-3px;margin:14px 0}
+    .lead{font-size:clamp(20px,2.6vw,27px);line-height:1.3;font-weight:750;letter-spacing:-.7px;margin-bottom:16px}
+    .intro{color:var(--muted);font-size:16px;max-width:590px}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+    .btn{min-height:46px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 17px;border-radius:999px;text-decoration:none;font-size:14px;font-weight:750;transition:transform .18s,box-shadow .18s}
+    .btn:hover{transform:translateY(-2px)}
+    .primary{background:linear-gradient(135deg,#1685ff,#2859f7);color:#fff;box-shadow:0 8px 20px #246bfd30}
+    .secondary{background:#fff;border:1px solid var(--line)}
+    .art{min-height:320px;display:grid;place-items:center;position:relative;overflow:hidden}
+    .art-glow{position:absolute;width:78%;height:75%;background:#b9e8ff;border-radius:50%;filter:blur(55px);opacity:.7}
+    .tiles{position:relative;width:100%;max-width:440px;height:285px}
+    .tile{position:absolute;width:118px;height:218px;padding:7px;border:1px solid #fff;border-radius:25px;box-shadow:0 18px 35px #1c376333;background:#fff}
+    .tile-inner{height:100%;border-radius:19px;display:flex;flex-direction:column;justify-content:flex-end;padding:12px;color:#fff;overflow:hidden;position:relative}
+    .tile-inner:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,#07132bdd)}
+    .tile-symbol{position:absolute;inset:30px 0 45px;display:grid;place-items:center;font-size:54px;font-weight:700;text-shadow:0 3px 15px #0005}
+    .tile b,.tile small{position:relative}
+    .tile b{font-size:14px}.tile small{font-size:9px;opacity:.9}
+    .c-shiva{background:linear-gradient(145deg,#0b2758,#368bd3)}.c-krishna{background:linear-gradient(145deg,#086a83,#f4b43d)}.c-hanuman{background:linear-gradient(145deg,#7c1e0b,#fa7920)}.c-jesus{background:linear-gradient(145deg,#8b6648,#e8c995)}.c-finance{background:linear-gradient(145deg,#08744d,#22c782)}
+    .t1{left:2%;top:57px;transform:rotate(-13deg)}.t2{left:19%;top:30px;transform:rotate(-7deg)}.t3{left:36%;top:5px;z-index:2}.t4{left:54%;top:30px;transform:rotate(7deg)}.t5{left:72%;top:60px;transform:rotate(13deg)}
+    .section{padding:38px 0 60px}
+    .heading{text-align:center;max-width:640px;margin:0 auto 28px}
+    .heading h2{font-size:clamp(29px,4vw,40px);line-height:1.2;letter-spacing:-1.4px;margin:10px 0}
+    .heading p{color:var(--muted);margin-bottom:0}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .card{min-width:0;background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+    .app-head{display:flex;align-items:center;gap:12px;margin-bottom:13px}
+    .app-icon{width:62px;height:62px;flex:0 0 62px;border-radius:17px;display:grid;place-items:center;color:#fff;font-size:29px;font-weight:800;box-shadow:inset 0 1px 0 #ffffff77;object-fit:cover}
+    .i-shiva{background:linear-gradient(145deg,#08295f,#328bdb)}.i-krishna{background:linear-gradient(145deg,#08728a,#f4b63e)}.i-hanuman{background:linear-gradient(145deg,#8b210d,#fa7920)}.i-ganesh{background:linear-gradient(145deg,#a84c09,#f5bd4b)}.i-jesus{background:linear-gradient(145deg,#886342,#e7c58f)}.i-salary,.i-loan{background:linear-gradient(145deg,#087b54,#2bd095)}
+    .card h3{font-size:15px;line-height:1.4;letter-spacing:-.2px;margin:0;font-weight:800}
+    .card p{font-size:13.5px;color:var(--muted);line-height:1.65;margin-bottom:14px}
+    .tags{display:flex;flex-wrap:wrap;gap:6px;margin:auto 0 15px}
+    .tag{font-size:11px;color:#4f5d79;background:#f0f4ff;border-radius:30px;padding:5px 8px}
+    .card .btn{width:100%;font-size:13px;min-height:44px;padding:11px 10px}
+    .values{display:grid;grid-template-columns:repeat(4,1fr);margin-top:20px;border:1px solid var(--line);border-radius:20px;background:#ffffffc9;padding:20px 8px;box-shadow:var(--shadow)}
+    .value{text-align:center;padding:6px 14px;border-right:1px solid var(--line)}
+    .value:last-child{border:0}.value .symbol{font-size:24px;color:var(--blue);margin-bottom:5px}
+    .value strong{display:block;font-size:13px;margin-bottom:5px}.value span{display:block;font-size:12px;color:var(--muted);line-height:1.5}
+    footer{border-top:1px solid var(--line);padding:25px 0 calc(25px + env(safe-area-inset-bottom));margin-top:8px}
+    .footer-row{display:flex;justify-content:space-between;align-items:center;gap:20px}
+    .footer-links{display:flex;flex-wrap:wrap;gap:16px}.footer-links a{font-size:12px;text-decoration:none;color:#485571}
+    .footer-links a:hover{color:var(--blue)}
+    .sub{font-size:12px;color:var(--muted);margin:4px 0 0}
+    .copyright{display:flex;justify-content:space-between;gap:12px;color:#8290aa;font-size:11px;margin-top:20px}
+    @media(max-width:850px){.hero-grid{grid-template-columns:1fr;gap:10px}.hero{padding-top:48px}.art{min-height:300px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:560px){
+      .wrap{width:calc(100% - 28px)}
+      .nav{min-height:62px;gap:8px}.brand{font-size:17px;gap:7px}.brand-icon{width:30px;height:30px}
+      .navlinks{gap:0}.navlinks a:not(.contact){display:none}.navlinks .contact{padding:9px 13px;font-size:13px}
+      .hero{padding:38px 0 20px}h1{font-size:47px;letter-spacing:-2.5px}.lead{font-size:21px}.intro{font-size:14px}
+      .actions{display:grid;grid-template-columns:1fr 1fr}.btn{font-size:13px;padding:11px 12px}
+      .art{min-height:240px;margin:0 -18px}.tiles{width:440px;max-width:none;transform:scale(.72);transform-origin:center center;flex-shrink:0}
+      .section{padding:26px 0 38px}.heading{margin-bottom:20px}.heading h2{font-size:30px}
+      .grid{grid-template-columns:1fr;gap:12px}.card{padding:16px;border-radius:17px}.app-icon{width:58px;height:58px;flex-basis:58px}
+      .card h3{font-size:15px}.card p{font-size:13px}
+      .values{grid-template-columns:repeat(2,minmax(0,1fr));gap:0;padding:12px 4px}.value{padding:13px 9px}.value:nth-child(2){border-right:0}.value:nth-child(1),.value:nth-child(2){border-bottom:1px solid var(--line)}.value:nth-child(3){border-right:1px solid var(--line)}
+      .footer-row{align-items:flex-start;flex-direction:column}.footer-links{gap:14px}.copyright{flex-direction:column;gap:5px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="./" aria-label="Atreus Studios home">
+      <span>Atreus Studios</span>
+    </a>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a href="#apps">Apps</a><a href="#about">About</a><a href="#support">Support</a>
+      <a href="./privacy.html">Privacy</a><a class="contact" href="mailto:pothakanuriabilash@gmail.com">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Apps for a more meaningful everyday</div>
+        <h1>Atreus<br>Studios.</h1>
+        <div class="lead">Devotion and utility apps for a brighter, more inspired life.</div>
+        <p class="intro">We create beautiful, easy-to-use mobile apps that bring devotion, inspiration and everyday utility together. Explore devotional experiences with wallpapers, mantras, slokas and prayers, alongside practical tools that help make daily life a little simpler.</p>
+        <div class="actions"><a class="btn primary" href="#apps">Explore our apps <span aria-hidden="true">↗</span></a><a class="btn secondary" href="#about">Our approach <span aria-hidden="true">↓</span></a></div>
+      </div>
+      <div class="art" aria-label="Illustrated preview of devotional and utility apps">
+        <div class="art-glow"></div>
+        <div class="tiles" aria-hidden="true">
+          <div class="tile t1"><div class="tile-inner c-hanuman"><div class="tile-symbol">ॐ</div><b>Hanuman</b><small>Strength &amp; faith</small></div></div>
+          <div class="tile t2"><div class="tile-inner c-krishna"><div class="tile-symbol">♫</div><b>Krishna</b><small>Peace &amp; devotion</small></div></div>
+          <div class="tile t3"><div class="tile-inner c-shiva"><div class="tile-symbol">ॐ</div><b>Shiva</b><small>Find your stillness</small></div></div>
+          <div class="tile t4"><div class="tile-inner c-jesus"><div class="tile-symbol">✝</div><b>Jesus</b><small>Hope &amp; inspiration</small></div></div>
+          <div class="tile t5"><div class="tile-inner c-finance"><div class="tile-symbol">₹</div><b>Finance</b><small>Plan with clarity</small></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="apps">
+    <div class="wrap">
+      <div class="heading"><div class="eyebrow">Made with care</div><h2>Small apps. Meaningful moments.</h2><p>Thoughtful devotional experiences and practical everyday tools, designed to be simple to use.</p></div>
+      <div class="grid">
+        <article class="card"><div class="app-head"><img class="app-icon" src="shiva.jpg" alt="Shiva Wallpapers app icon" loading="lazy"><h3>Shiva Wallpapers 4K &amp; Mantra</h3></div><p>Devotional wallpapers, mantras, slokas and more to bring calm to your screen.</p><div class="tags"><span class="tag">4K Wallpapers</span><span class="tag">Mantras &amp; Slokas</span><span class="tag">Mala Counter</span></div><a class="btn primary" href="https://play.google.com/store/apps/details?id=com.shivahdwallpapers.app" target="_blank" rel="noopener noreferrer">View on Google Play ↗</a></article>
+        <article class="card"><div class="app-head"><img class="app-icon" src="krishna.jpg" alt="Krishna Wallpapers app icon" loading="lazy"><h3>Krishna Wallpaper 4K &amp; Mantra</h3></div><p>Beautiful Krishna wallpapers and devotional content for daily inspiration.</p><div class="tags"><span class="tag">4K Wallpapers</span><span class="tag">Mantras &amp; Bhajans</span><span class="tag">Mala Counter</span></div><a class="btn primary" href="https://play.google.com/store/apps/details?id=com.krishnaHdWallpapers.app" target="_blank" rel="noopener noreferrer">View on Google Play ↗</a></article>
+        <article class="card"><div class="app-head"><img class="app-icon" src="hanuman.png" alt="Hanuman Wallpapers app icon" loading="lazy"><h3>Hanuman Wallpapers &amp; Chalisa</h3></div><p>Hanuman wallpapers, Hanuman Chalisa and devotional essentials in one place.</p><div class="tags"><span class="tag">4K Wallpapers</span><span class="tag">Hanuman Chalisa</span><span class="tag">Aarti &amp; Mantras</span></div><a class="btn primary" href="https://play.google.com/store/apps/details?id=com.hanumanwallpapers.app" target="_blank" rel="noopener noreferrer">View on Google Play ↗</a></article>
+        <article class="card"><div class="app-head"><img class="app-icon" src="ganesh.jpg" alt="Ganesh Wallpapers app icon" loading="lazy"><h3>Ganesh Wallpapers 4K &amp; Slokas</h3></div><p>Celebrate Lord Ganesh with devotional wallpapers, slokas, mantras and festival content.</p><div class="tags"><span class="tag">4K Wallpapers</span><span class="tag">Slokas &amp; Mantras</span><span class="tag">Festival Info</span></div><a class="btn primary" href="https://play.google.com/store/apps/details?id=com.ganeshhdwallpapers.app" target="_blank" rel="noopener noreferrer">View on Google Play ↗</a></article>
+        <article class="card"><div class="app-head"><img class="app-icon" src="jesus.png" alt="Jesus Wallpapers app icon" loading="lazy"><h3>Jesus Wallpapers 4K &amp; Bible</h3></div><p>Jesus wallpapers, Bible content, prayers and devotional features for inspiration.</p><div class="tags"><span class="tag">4K Wallpapers</span><span class="tag">Bible &amp; Prayers</span><span class="tag">Daily Inspiration</span></div><a class="btn primary" href="https://play.google.com/store/apps/details?id=com.jesuswallpapers.app" target="_blank" rel="noopener noreferrer">View on Google Play ↗</a></article>
+        <article class="card"><div class="app-head"><img class="app-icon" src="salary-calculator.jpg" alt="Salary Calculator India app icon" loading="lazy"><h3>Salary Calculator India</h3></div><p>A handy tool to estimate salary details and better understand take-home pay.</p><div class="tags"><span class="tag">Salary Estimates</span><span class="tag">India-focused</span><span class="tag">Easy to Use</span></div><a class="btn primary" href="https://play.google.com/store/apps/details?id=com.indiansalarycalculator.app" target="_blank" rel="noopener noreferrer">View on Google Play ↗</a></article>
+        <article class="card"><div class="app-head"><img class="app-icon" src="loan-emi-calculator.png" alt="Loan and EMI Calculator app icon" loading="lazy"><h3>Loan &amp; EMI Calculator</h3></div><p>Estimate loan EMIs and repayment costs to plan borrowing with more clarity.</p><div class="tags"><span class="tag">EMI Calculator</span><span class="tag">Loan Planning</span><span class="tag">Interest Estimates</span></div><a class="btn primary" href="https://play.google.com/store/apps/details?id=com.loanemicalculator2.app" target="_blank" rel="noopener noreferrer">View on Google Play ↗</a></article>
+      </div>
+      <div class="values" id="about">
+        <div class="value"><div class="symbol" aria-hidden="true">♡</div><strong>Meaningful content</strong><span>Apps made to bring inspiration and everyday value.</span></div>
+        <div class="value"><div class="symbol" aria-hidden="true">◇</div><strong>Simple by design</strong><span>Clear, approachable experiences without clutter.</span></div>
+        <div class="value"><div class="symbol" aria-hidden="true">✧</div><strong>Always improving</strong><span>We work to refine our apps and user experience.</span></div>
+        <div class="value"><div class="symbol" aria-hidden="true">♡</div><strong>Made with care</strong><span>Thoughtful tools for people around the world.</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="support">
+  <div class="wrap">
+    <div class="footer-row">
+      <div><a class="brand" href="./"><span>Atreus Studios</span></a><p class="sub">Devotion · Inspiration · Everyday utility</p></div>
+      <nav class="footer-links" aria-label="Footer navigation"><a href="#apps">Apps</a><a href="#about">About</a><a href="mailto:pothakanuriabilash@gmail.com">Support</a><a href="./privacy.html">Privacy Policy</a></nav>
+      <div><strong style="font-size:13px">Contact us</strong><br><a class="sub" href="mailto:pothakanuriabilash@gmail.com">pothakanuriabilash@gmail.com</a></div>
+    </div>
+    <div class="copyright"><span>© <span id="year">2026</span> Atreus Studios. All rights reserved.</span><span>Made with care for a better everyday.</span></div>
+  </div>
+</footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
